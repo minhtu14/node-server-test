@@ -1,6 +1,7 @@
 const express = require('express');
 
 app = express();
+const port = process.env.PORT || 3000;
 app.get('/', (req, response) => {
   response.send({
     name : 'Tony',
@@ -12,8 +13,8 @@ app.get('/', (req, response) => {
 });
 
 app.get('/about', (req, response) => {
-  response.send('About Page');
+  response.send(`About Page ${port}`);
 
 })
 
-app.listen(3000);
+app.listen(port);
